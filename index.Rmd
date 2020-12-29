@@ -1,0 +1,24 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r cars, include=FALSE}
+library(tidyverse)
+library(highcharter)
+```
+
+```{r data, include=FALSE}
+mpg_data <- read_csv("mpg.csv")
+```
+
+## Interactive Plot
+
+```{r pressure, echo=FALSE}
+hchart(mpg_data, "point", hcaes(x = displ, y = cty, group = year))
+```
+
+
